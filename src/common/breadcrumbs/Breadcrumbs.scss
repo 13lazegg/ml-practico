@@ -1,0 +1,11 @@
+.Breadcrumbs{
+  list-style: none;
+  padding: 0;
+  color: #666;
+  li + li{
+    &:before{
+      content: ">";
+      margin-right: 0.30rem;
+    }
+  }
+}
