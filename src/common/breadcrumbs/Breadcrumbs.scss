@@ -2,10 +2,20 @@
   list-style: none;
   padding: 0;
   color: #666;
-  li + li{
-    &:before{
+  li{
+    cursor: pointer;
+    &:after{
       content: ">";
-      margin-right: 0.30rem;
+      color: #666 !important;
+      margin-left: 0.30rem;
+    }
+    &:last-child{
+      &:after{
+        content: '';
+      }
+    }
+    &:hover{
+      color: #333;
     }
   }
 }

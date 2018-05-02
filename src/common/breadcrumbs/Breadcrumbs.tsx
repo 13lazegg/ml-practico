@@ -13,12 +13,15 @@ class Breadcrumbs extends React.Component<Iprops, Istate> {
     this.handleChange = this.handleChange.bind(this);
   }
   public render() {
-    const breadcrumbs = this.state.value[0].values[0].path_from_root.map((filter: IfiltersValues, i: number) => {
-      const children = <li className="p-1" key={i}>{filter.name}</li>
-      return children;
-    })
+    let breadcrumbs: any;
+    if (this.state.value){ 
+      breadcrumbs = this.state.value[0].values[0].path_from_root.map((filter: IfiltersValues, i: number) => {
+        const children = <li className="p-1" key={i}>{filter.name}</li>
+        return children;
+      })
+    }
     return (
-      <ul className="Breadcrumbs d-flex jutify-content-center align-items-center">
+      <ul className="Breadcrumbs d-flex flex-md-row flex-column jutify-content-center align-items-md-center">
         {breadcrumbs}
       </ul>
     );
