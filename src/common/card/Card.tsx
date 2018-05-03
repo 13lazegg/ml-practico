@@ -26,7 +26,7 @@ class Breadcrumbs extends React.Component<Iprops, Istate> {
                       .toString()
                       .replace(".", ",")
                       .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")} {this.state.value.shipping.free_shipping ? <img className="shipping" src={icon} /> : null}</span>
-                      <span className="ml-auto">{this.state.value.address.state_name}</span>
+                      <span className="ml-auto p-2">{this.state.value.address.state_name}</span>
                     </div>
                     <span className="title">{this.state.value.title}</span>
                   </div>
