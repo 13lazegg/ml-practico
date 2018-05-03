@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import '../../assets/css/common/card/Card.css';
 
 import { Iprops, Istate } from '../../interfaces/props';
@@ -28,7 +29,7 @@ class Breadcrumbs extends React.Component<Iprops, Istate> {
                       .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")} {this.state.value.shipping.free_shipping ? <img className="shipping" src={icon} /> : null}</span>
                       <span className="ml-auto p-2">{this.state.value.address.state_name}</span>
                     </div>
-                    <span className="title">{this.state.value.title}</span>
+                    <Link className="title" to={"/items/"+this.state.value.id}>{this.state.value.title}</Link>
                   </div>
                 </div>
               </div>

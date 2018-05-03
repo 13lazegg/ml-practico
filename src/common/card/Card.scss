@@ -28,6 +28,10 @@
         color: #333;
         font-weight: 300;
         padding-top: 2rem;
+        text-decoration: none;
+        &:hover{
+          color: #000;
+        }
       }
     }
   }
