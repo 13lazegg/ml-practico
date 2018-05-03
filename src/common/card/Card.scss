@@ -1,0 +1,48 @@
+.search-results{
+  background-color: white;
+  height: auto;
+  min-height: 208px;
+  position: relative;
+  .item-container {
+    .detail{
+      .data{
+        width: 100%;
+      }
+      img {
+        height: 160px;
+        width: 198.97px;
+        margin: 24px 24px 8px;
+      }
+      .shipping{
+        width: 20px;
+        height: 20px;
+        margin: 0;
+      }
+      .price{
+        font-size: 2rem;
+        color: #333;
+        font-weight: 500;
+      }
+      .title{
+        font-size: 1.2rem;
+        color: #333;
+        font-weight: 300;
+        padding-top: 2rem;
+      }
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    bottom: 0;
+    height: 1px;
+    width: 94.5%;
+    border-bottom: 1px solid #eee;
+  }
+  &:last-child{
+    &:after{
+      z-index: -1;
+    }
+  }
+}

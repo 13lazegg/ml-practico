@@ -1,6 +1,6 @@
 import { Iresults } from '../interfaces/props';
 const getItems = (value: string): Promise<Iresults> => {
-  return fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${value}&include=category&limit=4#json`)
+  return fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${value}#json`)
     .then((response) => {
       return response.json()
     })

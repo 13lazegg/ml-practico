@@ -37,9 +37,17 @@ class Result extends React.Component< Iprops, Istate > {
         <SearchBar value={this.value} />
         <div className="container">
           { this.state.filters.length ? <Breadcrumbs value={this.state.filters} /> : null }
-          {this.state.results.length ? this.state.results.map((item: IitemResult, i: number) => {
-            return <Card value={item} key={i} />;
-          }) : ((this.state.results.length === 0 && this.loading === false) ? <span>No se encontraron Resultados</span> : <span>Cargando...</span>) }
+          {this.state.results.length ? 
+          (
+            <ol className="itemsList">
+            {this.state.results.map((item: IitemResult, i: number) => {
+              return <Card value={item} key={i} />;
+            })}
+            </ol>
+          ) : 
+          ((this.state.results.length === 0 && this.loading === false) ? 
+              <span>No se encontraron Resultados</span> : 
+              <span>Cargando...</span>) }
         </div>
       </div>
     );
