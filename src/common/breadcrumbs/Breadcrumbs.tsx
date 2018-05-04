@@ -14,8 +14,13 @@ class Breadcrumbs extends React.Component<Iprops, Istate> {
   }
   public render() {
     let breadcrumbs: any;
-    if (this.state.value){ 
+    if (this.state.value.length){ 
       breadcrumbs = this.state.value[0].values[0].path_from_root.map((filter: IfiltersValues, i: number) => {
+        const children = <li className="p-1" key={i}>{filter.name}</li>
+        return children;
+      })
+    }else{
+      breadcrumbs = this.state.value.path_from_root.map((filter: IfiltersValues, i: number) => {
         const children = <li className="p-1" key={i}>{filter.name}</li>
         return children;
       })

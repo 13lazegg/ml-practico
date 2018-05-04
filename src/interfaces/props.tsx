@@ -2,6 +2,7 @@ interface Iprops {
   status?: string | null;
   value?: any | null;
   location?: Ilocation | null;
+  match?: Imatch | null;
 }
 
 interface Istate {
@@ -9,6 +10,14 @@ interface Istate {
   value?: any | null;
   filters?: any | null;
   results?: any | null;
+  description?: any | null;
+}
+
+interface Imatch {
+  isExact?: boolean | null;
+  params?: any | null;
+  path?: string | null;
+  url?: string | null;
 }
 
 interface Ilocation {

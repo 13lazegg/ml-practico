@@ -1,17 +1,20 @@
 .search-results{
   background-color: white;
   height: auto;
-  min-height: 208px;
   position: relative;
   .item-container {
     .detail{
       .data{
         width: 100%;
+        .address{
+          font-size: 12px;
+        }
       }
       img {
         height: 160px;
         width: 198.97px;
-        margin: 24px 24px 8px;
+        margin: 14px;
+        border-radius: 4px;
       }
       .shipping{
         width: 20px;
@@ -19,12 +22,12 @@
         margin: 0;
       }
       .price{
-        font-size: 2rem;
+        font-size: 1.714rem;
         color: #333;
         font-weight: 500;
       }
       .title{
-        font-size: 1.2rem;
+        font-size: 1.286rem;
         color: #333;
         font-weight: 300;
         padding-top: 2rem;

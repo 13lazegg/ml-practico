@@ -1,0 +1,45 @@
+.Detail{
+  .producto {
+    background-color: #fff;
+    padding: 2rem;
+    .title{
+      font-size: 1.714rem;
+      margin: 0.875rem 0 2rem 0;
+    }
+    .sold{
+      font-size: 1rem;
+    }
+    .productDetail{
+      img{
+        width: 100%;
+        max-width: 680px;
+      }
+      .descriptionProduct{
+        h1{
+          font-size: 2rem;
+          margin: 2rem 0;
+        }
+        p{
+          font-size: 1.143rem;
+        }
+      }
+    }
+    .price{
+      font-size: 3.286rem;
+      span{
+        font-size: 1.9rem;
+        padding: 0.3rem;
+      }
+    }
+    .buy{
+      color: #fff;
+      background-color: #3483fa;
+      border: 0;
+      padding: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 2rem;
+      font-size: 1.286rem;
+    }
+  }
+}

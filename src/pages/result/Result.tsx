@@ -5,12 +5,11 @@ import Breadcrumbs from '../../common/breadcrumbs/Breadcrumbs';
 import Card from '../../common/card/Card';
 import SearchBar from '../../common/search/Search';
 
-import { IitemResult, Iprops, Iresults, Istate } from '../../interfaces/props';
+import { IitemResult, Iprops, Istate } from '../../interfaces/props';
 import * as api from '../../services/Api';
 
 class Result extends React.Component< Iprops, Istate > {
   
-  public results: Iresults;
   private param: string[];
   private value: string;
   private loading: boolean;
@@ -45,7 +44,7 @@ class Result extends React.Component< Iprops, Istate > {
             })}
             </ol>
           ) : 
-          ((this.state.results.length === 0 && this.loading === false) ? 
+          ((this.state.results.length === 0 && !this.loading) ? 
               <span>No se encontraron Resultados</span> : 
               <span>Cargando...</span>) }
         </div>
