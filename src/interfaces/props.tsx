@@ -27,24 +27,6 @@ interface Ilocation {
   state?: string | null;
 }
 
-interface Ifilters {
-  id?: string | null;
-  name?: string | null;
-  type?: string | null;
-  values?: IfiltersValues[];
-}
-
-interface IfiltersValues {
-  id?: string | null;
-  name?: string | null;
-  path_from_root?: IfiltersValuesPath[];
-}
-
-interface IfiltersValuesPath {
-  id?: string | null;
-  name?: string | null;
-}
-
 interface IitemResult {
   id?: string;
   title?: string;
@@ -62,21 +44,20 @@ interface IitemResult {
 }
 
 interface Iresults {
-  author: { 
-    name: string;
-    lastname: string;
-  }; 
+  author: Iauthor;
   categories: string[]; 
   items: IitemResult[];
 }
 
 interface Idetail {
-  author: {
-    name: string;
-    lastname: string;
-  };
+  author: Iauthor;
   categories: string[];
   items: IitemResult;
 }
 
-export { Iprops, Istate, Ifilters, IfiltersValues, Iresults, IitemResult, Idetail};
+interface Iauthor{
+  name: string;
+  lastname: string;
+}
+
+export { Iprops, Istate, Iresults, IitemResult, Idetail};

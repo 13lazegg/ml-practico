@@ -1,7 +1,7 @@
 import * as React from 'react';
 import '../../assets/css/common/breadcrumbs/Breadcrumbs.css';
 
-import { IfiltersValues, Iprops, Istate } from '../../interfaces/props';
+import { Iprops, Istate } from '../../interfaces/props';
 
 class Breadcrumbs extends React.Component<Iprops, Istate> {
 
@@ -18,11 +18,6 @@ class Breadcrumbs extends React.Component<Iprops, Istate> {
       if (this.state.value.length){ 
         breadcrumbs = this.state.value.map((filter: string, i: number) => {
           const children = <li className="p-1" key={i}>{filter}</li>
-          return children;
-        })
-      }else{
-        breadcrumbs = this.state.value.path_from_root.map((filter: IfiltersValues, i: number) => {
-          const children = <li className="p-1" key={i}>{filter.name}</li>
           return children;
         })
       }
