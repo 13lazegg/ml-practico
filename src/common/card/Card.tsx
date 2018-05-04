@@ -20,15 +20,12 @@ class Breadcrumbs extends React.Component<Iprops, Istate> {
               {(this.state.value) ?
                 <div className="item-container">
                   <div className="detail d-flex flex-md-row flex-column align-items-lg-start align-items-center">
-                    <img src={this.state.value.thumbnail} />
+                    <img src={this.state.value.picture} />
                     <div className="d-flex flex-column justify-content-center data p-4">
                       <div className="d-flex align-items-center">
-                        <span className="price">$ {this.state.value.price
-                        .toFixed(2)
-                        .toString()
-                        .replace(".", ",")
-                        .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")} {this.state.value.shipping.free_shipping ? <img className="shipping" src={icon} /> : null}</span>
-                        <span className="ml-auto p-2 address">{this.state.value.address.state_name}</span>
+                        <span className="price">$ {this.state.value.price.amount.toString()
+                        .replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.")},{(this.state.value.price.decimals) ? this.state.value.price.decimals : '00'} {this.state.value.free_shipping ? <img className="shipping" src={icon} /> : null}</span>
+                        <span className="ml-auto p-2 address">{this.state.value.location}</span>
                       </div>
                       <Link className="title" to={"/items/"+this.state.value.id}>{this.state.value.title}</Link>
                     </div>

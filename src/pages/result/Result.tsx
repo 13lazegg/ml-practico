@@ -56,8 +56,8 @@ class Result extends React.Component< Iprops, Istate > {
     api.getItems(this.value).then((response => {
       this.loading = false;
       this.setState({
-        filters: response.filters,
-        results: response.results
+        filters: response.categories,
+        results: response.items
       })
     }))
   }

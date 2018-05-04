@@ -1,6 +1,6 @@
-import { Iresults } from '../interfaces/props';
+import { Idetail, Iresults } from '../interfaces/props';
 const getItems = (value: string): Promise<Iresults> => {
-  return fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${value}&limit=4`)
+  return fetch(`http://localhost:8080/api/items?q=${value}`)
     .then((response) => {
       return response.json()
     })
@@ -8,6 +8,8 @@ const getItems = (value: string): Promise<Iresults> => {
         return items;
       })
       .catch((error) => {
+        // tslint:disable-next-line:no-console
+        console.log(error);
         return error;
       });
 };
@@ -25,7 +27,7 @@ const getItemById = (id: string): Promise<any> => {
     });
 }
 
-const getItemDescriptionById = (id: string): Promise<any> => {
+const getItemDescriptionById = (id: string): Promise<Idetail> => {
   return fetch(`https://api.mercadolibre.com/items/${id}/description`)
     .then((response) => {
       return response.json()
