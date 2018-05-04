@@ -56,20 +56,14 @@ class Detail extends React.Component<Iprops, Istate> {
   public componentDidMount() {
     if (this.props.match){
       api.getItemById(this.props.match.params.id).then((response => {
-        // tslint:disable-next-line:no-console
-        console.log(response);
         this.setState({
           value: response
         })
         api.getItemDescriptionById(response.id).then((resonseDescription => {
-          // tslint:disable-next-line:no-console
-          console.log(resonseDescription);
           this.setState({
             description: resonseDescription
           })
           api.getItemCategoryById(response.category_id).then((responseFilters => {
-            // tslint:disable-next-line:no-console
-            console.log(responseFilters);
             this.loading = false;
             this.setState({
               filters: responseFilters

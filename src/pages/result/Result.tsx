@@ -54,8 +54,6 @@ class Result extends React.Component< Iprops, Istate > {
 
   public componentDidMount() {
     api.getItems(this.value).then((response => {
-      // tslint:disable-next-line:no-console
-      console.log(response);
       this.loading = false;
       this.setState({
         filters: response.filters,
